@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="Backdrop">
+        <attr name="openIcon" format="reference"/>
+        <attr name="closeIcon" format="reference"/>
+    </declare-styleable>
+
+</resources>

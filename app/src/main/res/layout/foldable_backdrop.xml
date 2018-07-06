@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="#fff"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="wrap_content"
+        android:text="@string/app_name"
+        android:layout_height="wrap_content" />
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/app_name"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_height="wrap_content" />
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:text="@string/app_name"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content" />
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/app_name"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_height="wrap_content" />
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="wrap_content"
+        android:text="@string/app_name"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content" />
+</LinearLayout>
