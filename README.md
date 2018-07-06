@@ -1,7 +1,8 @@
 # IBackdrop
 A library to simply setup a backdrop in your project
 
-<img src="/screenshots/img1.png" width="260" height="480"> <img src="/screenshots/img2.png" width="260" height="480">
+<img src="/screenshots/img1.png" width="260" height="280"> <img src="/screenshots/img2.png" width="260" height="280">
+
 
 ## Requirements
 ​
