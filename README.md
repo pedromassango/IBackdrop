@@ -57,20 +57,7 @@ Step 2. Add the dependency
 ```
 
 
-## Basic usage
+### Basic usage
 
-After that everything that you need to do is:
-
-```java
-
-// set toolbar as actionBar (necessary an toolbar)
-setSupportActionBar(home_toolbar)
-
-// find your backdrop in your activity/fragment xml
-val iBackdrop = findViewById(R.id.backdrop_view)
-
-// build backdrop view
-backdrop_view
-    .withToolbar(home_toolbar)
-    .build()
-```
+I wrote a step by step for how to use this library on Medium, follow the link: 
+https://medium.com/@pedromassango/android-material-design-components-backdrop-96a3044a3b2
