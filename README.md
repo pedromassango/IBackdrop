@@ -1,7 +1,7 @@
 # IBackdrop
 A library to simply setup a backdrop in your project
 
-![Alt Text](/screenshots/gif1.gif) <img src="/screenshots/img1.png" width="260" height="180">
+<img src="/screenshots/gif1.gif" width="260" height="460"> <img src="/screenshots/img1.png" width="260" height="180">
 
 
 ## Requirements
