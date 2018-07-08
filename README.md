@@ -1,5 +1,8 @@
 # IBackdrop
+[![](https://jitpack.io/v/pedromassango/IBackdrop.svg)](https://jitpack.io/#pedromassango/IBackdrop)
+
 A library to simply setup a backdrop in your project
+
 
 <img src="/screenshots/gif1.gif" width="280" height="480">
 
