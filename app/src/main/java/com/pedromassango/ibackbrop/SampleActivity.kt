@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import kotlinx.android.synthetic.main.activity_sample.*
+import kotlinx.android.synthetic.main.main_backdrop.*
 
 class SampleActivity : AppCompatActivity() {
 
@@ -19,6 +20,12 @@ class SampleActivity : AppCompatActivity() {
         backdrop_view
                 .withToolbar(home_toolbar)
                 .build()
+
+        // on button click close backdrop
+        btn_home.setOnClickListener {
+            // call this to close backdrop
+            backdrop_view.closeBackdrop()
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

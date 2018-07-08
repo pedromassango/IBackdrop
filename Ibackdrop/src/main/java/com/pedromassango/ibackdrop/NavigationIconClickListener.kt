@@ -8,7 +8,7 @@ import android.graphics.drawable.Drawable
 import android.util.DisplayMetrics
 import android.view.View
 import android.view.animation.Interpolator
-import android.widget.ImageView
+import androidx.appcompat.widget.AppCompatImageButton
 
 class NavigationIconClickListener @JvmOverloads internal constructor(
         context: Context,
@@ -22,6 +22,7 @@ class NavigationIconClickListener @JvmOverloads internal constructor(
     private val animDuration = 270L
     private var height: Int
     private var backdropShown = false
+    private var toolbarNavIcon: AppCompatImageButton? = null
 
     init {
         val displayMetrics = DisplayMetrics()
@@ -29,10 +30,18 @@ class NavigationIconClickListener @JvmOverloads internal constructor(
         height = (displayMetrics.heightPixels)
     }
 
+    fun open() = if(!backdropShown){ onClick(toolbarNavIcon!!) } else {}
+    fun close() = if(backdropShown){ onClick(toolbarNavIcon!!) } else {}
+
     override fun onClick(view: View) {
+        // only bind once
+        if(toolbarNavIcon == null) {
+            this.toolbarNavIcon = view as AppCompatImageButton
+        }
+
         backdropShown = !backdropShown
 
-        // reduce backdrop folded height by reduce the toolbar with & status bar height
+        // reduce backdrop folded height by reduce the toolbarNavIcon with & status bar height
         val size = backView.width + view.height + 16
         val translateY = height - size
 
@@ -67,13 +76,12 @@ class NavigationIconClickListener @JvmOverloads internal constructor(
      * @param view the clicked view. This must be a ImageView.
      */
     private fun updateIcon(view: View) {
+        checkNotNull(toolbarNavIcon)
+
         if (openIcon != null && closeIcon != null) {
-            if (view !is ImageView) {
-                throw IllegalArgumentException("updateIcon() must be called on an ImageView")
-            }
             when(backdropShown) {
-                true -> view.setImageDrawable(closeIcon)
-                false -> view.setImageDrawable(openIcon)
+                true -> toolbarNavIcon!!.setImageDrawable(closeIcon)
+                false -> toolbarNavIcon!!.setImageDrawable(openIcon)
             }
         }
     }

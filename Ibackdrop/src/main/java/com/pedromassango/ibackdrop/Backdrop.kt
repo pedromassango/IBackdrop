@@ -14,7 +14,7 @@ class Backdrop(context: Context, attributeSet: AttributeSet): FrameLayout( conte
     private lateinit var toolbar: Toolbar
     private var openIcon: Drawable? = ResourcesCompat.getDrawable(resources, R.drawable.ic_drop_open, null)
     private var closeIcon: Drawable? = ResourcesCompat.getDrawable(resources, R.drawable.ic_drop_close, null)
-
+    private lateinit var navIconClickListener: NavigationIconClickListener
     init {
 
         val customProperties = context.obtainStyledAttributes(attributeSet, R.styleable.Backdrop)
@@ -40,7 +40,7 @@ class Backdrop(context: Context, attributeSet: AttributeSet): FrameLayout( conte
     fun build() {
 
         // click listener to open/close the sheet
-        val navIconClickListener = NavigationIconClickListener(context,
+        navIconClickListener = NavigationIconClickListener(context,
                 backView = getBackView(),
                 sheet =  getFrontView(),
                 interpolator = LinearInterpolator(),
@@ -56,6 +56,15 @@ class Backdrop(context: Context, attributeSet: AttributeSet): FrameLayout( conte
         // on toolbar navigation click, handle it
         toolbar.setNavigationOnClickListener(navIconClickListener)
     }
+
+    /**
+     * Call this function will open the backdrop, only if it is currently closed
+     */
+    fun openBackdrop() = navIconClickListener.open()
+    /**
+     * Call this function will close the backdrop, only if it is currently opened
+     */
+    fun closeBackdrop() = navIconClickListener.close()
 
     /**
      * Here whe check if there is more than two child views.
