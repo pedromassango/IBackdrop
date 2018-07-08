@@ -60,4 +60,11 @@ Step 2. Add the dependency
 ### Basic usage
 
 I wrote a step by step for how to use this library on Medium, follow the link: 
-https://medium.com/@pedromassango/android-material-design-components-backdrop-96a3044a3b2
+http://bit.ly/2uc8Cc1
+
+### TODO
+
+- [ ] Handle Configuration Changes
+- [ ] Call Toolbar via XML (by reference)
+- [ ] Set a Front View Header (optional)
+- [ ] set Inative state to front layer when the back layer is visible
