@@ -64,7 +64,7 @@ http://bit.ly/2uc8Cc1
 
 ### TODO
 
-- [ ] Handle Configuration Changes
+- [ ] Handle Device Orientantion Changes
 - [ ] Call Toolbar via XML (by reference)
 - [ ] Set a Front View Header (optional)
 - [ ] set Inative state to front layer when the back layer is visible
