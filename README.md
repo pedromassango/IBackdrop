@@ -4,7 +4,7 @@
 A library to simply setup a backdrop in your project since for now there is no a easy way to implement that in our project. Words from official material link: "A backdrop appears behind all other surfaces in an app, displaying contextual and actionable content."
 
 
-<img src="/screenshots/gif1.gif" width="280" height="480">
+<img src="/screenshots/gif1.gif" width="280" height="480"> <img src="/screenshots/top_left_only.png" width="280" height="280">
 
 
 ## Requirements
@@ -32,7 +32,7 @@ Step 2. Add the dependency
 ```groovy
 dependencies {
         ...
-	    implementation 'com.github.pedromassango:IBackdrop:1.2.1'
+	    implementation 'com.github.pedromassango:IBackdrop:CURRENT-VERSION'
 	    ...
 	}
 ```
@@ -55,7 +55,7 @@ Step 2. Add the dependency
 <dependency>
     <groupId>com.github.pedromassango</groupId>
     <artifactId>IBackdrop</artifactId>
-    <version>1.2.1</version>
+    <version>CURRENT-VERSION</version>
 </dependency>
 ```
 
