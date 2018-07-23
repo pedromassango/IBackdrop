@@ -6,8 +6,6 @@ A library to simply setup a backdrop in your project since for now there is no a
 
 <img src="/screenshots/gif1.gif" width="280" height="480">
 
-![Alt text](/screenshots/top_left_only.png?raw=true)
-
 
 ## Requirements
 ​
