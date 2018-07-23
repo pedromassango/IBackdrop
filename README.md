@@ -4,7 +4,9 @@
 A library to simply setup a backdrop in your project since for now there is no a easy way to implement that in our project. Words from official material link: "A backdrop appears behind all other surfaces in an app, displaying contextual and actionable content."
 
 
-<img src="/screenshots/gif1.gif" width="280" height="480"> <img src="/screenshots/top_left_only.png" width="280" height="280">
+<img src="/screenshots/gif1.gif" width="280" height="480">
+
+![Alt text](/screenshots/top_left_only.png?raw=true)
 
 
 ## Requirements
