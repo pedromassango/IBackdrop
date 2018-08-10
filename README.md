@@ -14,6 +14,9 @@ A library to simply setup a backdrop in your project since for now there is no a
 
 ## Setting up
 
+*Current version:*  [![](https://jitpack.io/v/pedromassango/IBackdrop.svg)](https://jitpack.io/#pedromassango/IBackdrop)
+
+
 Gradle:
 
 Step 1. Add the JitPack repository to your build file.
