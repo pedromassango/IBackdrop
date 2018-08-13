@@ -66,7 +66,7 @@ Step 2. Add the dependency
 ### Basic usage
 
 I wrote a step by step for how to use this library on Medium, follow the link: 
-http://bit.ly/2uc8Cc1
+https://blog.usejournal.com/android-material-design-components-backdrop-96a3044a3b2
 
 ### TODO
 
