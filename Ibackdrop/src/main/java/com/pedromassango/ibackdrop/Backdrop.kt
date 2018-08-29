@@ -37,6 +37,11 @@ class Backdrop(context: Context, attributeSet: AttributeSet): FrameLayout( conte
         return this
     }
 
+    /**
+     * Build the backdrop view.
+     *
+     * NOTE: call this after set an Toolbar with #withToolbar function
+     */
     fun build() {
 
         // click listener to open/close the sheet
@@ -58,11 +63,16 @@ class Backdrop(context: Context, attributeSet: AttributeSet): FrameLayout( conte
     }
 
     /**
-     * Call this function will open the backdrop, only if it is currently closed
+     * Call this function will open the backdrop.
+     *
+     * NOTE: this will open, only if it is currently closed.
      */
     fun openBackdrop() = navIconClickListener.open()
+
     /**
-     * Call this function will close the backdrop, only if it is currently opened
+     * Call this function will close the backdrop
+     *
+     * NOTE: this will close, nly if it is currently opened.
      */
     fun closeBackdrop() = navIconClickListener.close()
 
