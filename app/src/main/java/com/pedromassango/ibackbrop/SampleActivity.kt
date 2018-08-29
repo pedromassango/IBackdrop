@@ -14,7 +14,7 @@ class SampleActivity : AppCompatActivity() {
 
         // set toolbar as actionBar
         setSupportActionBar(home_toolbar)
-        title = " "
+        title = " " // I do not want a title
 
         // build backdrop view
         backdrop_view
@@ -23,8 +23,12 @@ class SampleActivity : AppCompatActivity() {
 
         // on button click close backdrop
         btn_home.setOnClickListener {
+
             // call this to close backdrop
             backdrop_view.closeBackdrop()
+
+            // or this to open backdrop
+            //backdrop_view.openBackdrop()
         }
     }
 
