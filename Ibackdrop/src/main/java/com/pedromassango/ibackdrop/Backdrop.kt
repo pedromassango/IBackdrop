@@ -14,17 +14,24 @@ class Backdrop(context: Context, attributeSet: AttributeSet): FrameLayout( conte
     private lateinit var toolbar: Toolbar
     private var openIcon: Drawable? = ResourcesCompat.getDrawable(resources, R.drawable.ic_drop_open, null)
     private var closeIcon: Drawable? = ResourcesCompat.getDrawable(resources, R.drawable.ic_drop_close, null)
+    private var frontLayerBackground: Int = R.drawable.backdrop_background
     private lateinit var navIconClickListener: NavigationIconClickListener
-    init {
 
+    init{
         val customProperties = context.obtainStyledAttributes(attributeSet, R.styleable.Backdrop)
 
-        val moIcon: Drawable? = customProperties.getDrawable(R.styleable.Backdrop_openIcon)
-        val mcIcon: Drawable? = customProperties.getDrawable(R.styleable.Backdrop_closeIcon)
-        moIcon?.let { openIcon = moIcon }
-        mcIcon?.let { closeIcon = mcIcon }
-
-        customProperties.recycle()
+        try {
+            val moIcon: Drawable? = customProperties.getDrawable(R.styleable.Backdrop_openIcon)
+            val mcIcon: Drawable? = customProperties.getDrawable(R.styleable.Backdrop_closeIcon)
+            val mTopRightRadius: Boolean? = customProperties.getBoolean(R.styleable.Backdrop_removeTopRightRadius, false)
+            moIcon?.let { openIcon = moIcon }
+            mcIcon?.let { closeIcon = mcIcon }
+            mTopRightRadius?.let {
+                frontLayerBackground = if (mTopRightRadius) R.drawable.backdrop_background_round_left else R.drawable.backdrop_background
+            }
+        }finally{
+            customProperties.recycle()
+        }
     }
 
     /**
@@ -91,7 +98,7 @@ class Backdrop(context: Context, attributeSet: AttributeSet): FrameLayout( conte
             throw IllegalArgumentException(" ${this.javaClass.simpleName} Must contain only two child!")
         }
 
-        getFrontView().background = ResourcesCompat.getDrawable(resources, R.drawable.backdrop_background, null)
+        getFrontView().background = ResourcesCompat.getDrawable(resources, frontLayerBackground, null)
     }
 
     /**

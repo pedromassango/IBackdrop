@@ -14,6 +14,9 @@ A library to simply setup a backdrop in your project since for now there is no a
 
 ## Setting up
 
+*Current version:*  [![](https://jitpack.io/v/pedromassango/IBackdrop.svg)](https://jitpack.io/#pedromassango/IBackdrop)
+
+
 Gradle:
 
 Step 1. Add the JitPack repository to your build file.
@@ -32,7 +35,7 @@ Step 2. Add the dependency
 ```groovy
 dependencies {
         ...
-	    implementation 'com.github.pedromassango:IBackdrop:1.0.0-beta'
+	    implementation 'com.github.pedromassango:IBackdrop:CURRENT-VERSION'
 	    ...
 	}
 ```
@@ -55,7 +58,7 @@ Step 2. Add the dependency
 <dependency>
     <groupId>com.github.pedromassango</groupId>
     <artifactId>IBackdrop</artifactId>
-    <version>1.0.0-beta</version>
+    <version>CURRENT-VERSION</version>
 </dependency>
 ```
 
@@ -63,11 +66,11 @@ Step 2. Add the dependency
 ### Basic usage
 
 I wrote a step by step for how to use this library on Medium, follow the link: 
-http://bit.ly/2uc8Cc1
+https://blog.usejournal.com/android-material-design-components-backdrop-96a3044a3b2
 
 ### TODO
 
-- [ ] Handle Device Orientantion Changes
+- [x] Handle Device Orientantion Changes (you can set it in your manifest's activity tag)
 - [ ] Call Toolbar via XML (by reference)
 - [ ] Set a Front View Header (optional)
-- [ ] set Inative state to front layer when the back layer is visible
+- [ ] set Inative state to front layer when the back layer is visible (grey the layer)

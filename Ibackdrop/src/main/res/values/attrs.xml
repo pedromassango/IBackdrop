@@ -4,6 +4,7 @@
     <declare-styleable name="Backdrop">
         <attr name="openIcon" format="reference"/>
         <attr name="closeIcon" format="reference"/>
+        <attr name="removeTopRightRadius" format="boolean"/>
     </declare-styleable>
 
 </resources>

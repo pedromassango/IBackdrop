@@ -64,11 +64,13 @@ class NavigationIconClickListener @JvmOverloads internal constructor(
         animatorSet.play(animator)
         animator.start()
 
-        if(backdropShown){
+        // add transparency on front layer when folded
+        // we do not need this, because the front layer stay in the bottom of back layer
+      /*  if(backdropShown){
             sheet.alpha = 0.9F
         }else{
             sheet.alpha = 1.0F
-        }
+        }*/
     }
 
     /**
