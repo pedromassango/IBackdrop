@@ -17,9 +17,7 @@ class SampleActivity : AppCompatActivity() {
         title = " " // I do not want a title
 
         // build backdrop view
-        backdrop_view
-                .withToolbar(home_toolbar)
-                .build()
+        backdrop_view.buildWithToolbar(home_toolbar)
 
         // on button click close backdrop
         btn_home.setOnClickListener {
