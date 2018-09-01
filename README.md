@@ -8,7 +8,6 @@ A library to simply setup a backdrop in your project since for now there is no a
 
 
 ## Requirements
-​
 - Android API level 16 or greater
 - Your favorite IDE
 
