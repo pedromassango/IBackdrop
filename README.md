@@ -1,14 +1,13 @@
 # IBackdrop
 [![](https://jitpack.io/v/pedromassango/IBackdrop.svg)](https://jitpack.io/#pedromassango/IBackdrop)
 
-A library to simply setup a backdrop in your project since for now there is no a easy way to implement that in our project. Words from official material link: "A backdrop appears behind all other surfaces in an app, displaying contextual and actionable content."
+A library to simply setup a backdrop in your project since for now there is no a easy way to implement that in our project. Words from official material link: "A backdrop appears behind all other surfaces in an app, displaying contextual and actionable content", so there is an example of what you get using this library:
 
 
 <img src="/screenshots/gif1.gif" width="280" height="480">
 
 
 ## Requirements
-​
 - Android API level 16 or greater
 - Your favorite IDE
 
