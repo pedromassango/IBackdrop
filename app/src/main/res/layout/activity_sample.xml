@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:background="@color/colorPrimary">
 
@@ -19,7 +18,7 @@
         android:id="@+id/backdrop_view"
         app:openIcon="@drawable/ic_drop_open"
         app:closeIcon="@drawable/ic_drop_close"
-        app:removeTopRightRadius="true"
+        app:removeTopRightRadius="false"
         app:toolbar="@id/home_toolbar"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
