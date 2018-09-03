@@ -9,7 +9,7 @@ import android.widget.FrameLayout
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.res.ResourcesCompat
 
-class Backdrop(context: Context, attributeSet: AttributeSet): FrameLayout( context, attributeSet) {
+class Backdrop(context: Context, attributeSet: AttributeSet) : FrameLayout(context, attributeSet) {
 
     private lateinit var toolbar: Toolbar
     private var openIcon: Drawable? = ResourcesCompat.getDrawable(resources, R.drawable.ic_drop_open, null)
@@ -17,56 +17,79 @@ class Backdrop(context: Context, attributeSet: AttributeSet): FrameLayout( conte
     private var frontLayerBackground: Int = R.drawable.backdrop_background
     private lateinit var navIconClickListener: NavigationIconClickListener
 
-    init{
+    private var mcToolbarId: Int
+
+    init {
         val customProperties = context.obtainStyledAttributes(attributeSet, R.styleable.Backdrop)
 
         try {
             val moIcon: Drawable? = customProperties.getDrawable(R.styleable.Backdrop_openIcon)
             val mcIcon: Drawable? = customProperties.getDrawable(R.styleable.Backdrop_closeIcon)
             val mTopRightRadius: Boolean? = customProperties.getBoolean(R.styleable.Backdrop_removeTopRightRadius, false)
+            mcToolbarId = customProperties.getResourceId(R.styleable.Backdrop_toolbar, -1)
             moIcon?.let { openIcon = moIcon }
             mcIcon?.let { closeIcon = mcIcon }
             mTopRightRadius?.let {
                 frontLayerBackground = if (mTopRightRadius) R.drawable.backdrop_background_round_left else R.drawable.backdrop_background
             }
-        }finally{
+        } finally {
             customProperties.recycle()
         }
     }
 
     /**
-     * Set the toolbar to use with this backdrop.
-     */
-    fun withToolbar(toolbar: Toolbar): Backdrop {
-        this.toolbar = toolbar
-        // update open icon
-        this.toolbar.navigationIcon = openIcon
-        return this
-    }
-
-    /**
      * Build the backdrop view.
      *
-     * NOTE: call this after set an Toolbar with #withToolbar function
+     * NOTE: Require Toolbar is initialized with reference
      */
-    fun build() {
-
+    private fun build() {
+        setToolbarWithReference()
         // click listener to open/close the sheet
         navIconClickListener = NavigationIconClickListener(context,
                 backView = getBackView(),
-                sheet =  getFrontView(),
+                sheet = getFrontView(),
                 interpolator = LinearInterpolator(),
                 openIcon = openIcon,
                 closeIcon = closeIcon
         )
 
-        // throw if toolbar not set
-        checkNotNull(toolbar) {
-            IllegalStateException("Toolbar must not be null")
+        // on toolbar navigation click, handle it
+        toolbar.setNavigationOnClickListener(navIconClickListener)
+    }
+
+    private fun setToolbarWithReference() {
+        if (mcToolbarId == -1) throw IllegalStateException("Set toolbar property on XML or use Backdrop#buildWithToolbar(Toolbar)")
+        val view: View? = rootView.findViewById(mcToolbarId)
+        when (view) {
+            null -> throw IllegalStateException("View does not accessible")
+            !is Toolbar -> throw IllegalStateException("View is not Toolbar")
+            else -> toolbar = view
         }
+    }
+
+    /**
+     * Build the backdrop view with Toolbar.
+     */
+    fun buildWithToolbar(toolbar: Toolbar) {
+        setToolbar(toolbar)
+
+        // click listener to open/close the sheet
+        navIconClickListener = NavigationIconClickListener(context,
+                backView = getBackView(),
+                sheet = getFrontView(),
+                interpolator = LinearInterpolator(),
+                openIcon = openIcon,
+                closeIcon = closeIcon
+        )
 
         // on toolbar navigation click, handle it
         toolbar.setNavigationOnClickListener(navIconClickListener)
+    }
+
+    private fun setToolbar(toolbar: Toolbar) {
+        this.toolbar = toolbar
+        // update open icon
+        this.toolbar.navigationIcon = openIcon
     }
 
     /**
@@ -94,11 +117,18 @@ class Backdrop(context: Context, attributeSet: AttributeSet): FrameLayout( conte
         super.onFinishInflate()
 
         // if there is more than two views, crash the execution
-        if(childCount > 2){
-            throw IllegalArgumentException(" ${this.javaClass.simpleName} Must contain only two child!")
+        if (childCount > 2) {
+            throw IllegalArgumentException(" ${this.javaClass.simpleName} must contain only two child!")
         }
 
         getFrontView().background = ResourcesCompat.getDrawable(resources, frontLayerBackground, null)
+    }
+
+    override fun onAttachedToWindow() {
+        super.onAttachedToWindow()
+        if (mcToolbarId != -1) {
+            build()
+        }
     }
 
     /**

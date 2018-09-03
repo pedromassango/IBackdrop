@@ -5,6 +5,7 @@
         <attr name="openIcon" format="reference"/>
         <attr name="closeIcon" format="reference"/>
         <attr name="removeTopRightRadius" format="boolean"/>
+        <attr name="toolbar" format="reference"/>
     </declare-styleable>
 
 </resources>

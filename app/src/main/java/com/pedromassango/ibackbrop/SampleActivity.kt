@@ -1,8 +1,8 @@
 package com.pedromassango.ibackbrop
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
+import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_sample.*
 import kotlinx.android.synthetic.main.main_backdrop.*
 
@@ -16,10 +16,17 @@ class SampleActivity : AppCompatActivity() {
         setSupportActionBar(home_toolbar)
         title = " " // I do not want a title
 
-        // build backdrop view
-        backdrop_view
-                .withToolbar(home_toolbar)
-                .build()
+
+        /**
+         * Backdrop View Initialize
+         * @see R.attrs.Backdrop}
+         * If used Backdrop.toolbar attribute
+         * Do not need to use buildWithToolbar method
+         *
+         * If not,
+         * @see com.pedromassango.ibackdrop.Backdrop.buildWithToolbar(toolbar : Toolbar)
+         * */
+        //  backdrop_view.buildWithToolbar(home_toolbar)
 
         // on button click close backdrop
         btn_home.setOnClickListener {
@@ -30,6 +37,7 @@ class SampleActivity : AppCompatActivity() {
             // or this to open backdrop
             //backdrop_view.openBackdrop()
         }
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
