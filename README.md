@@ -70,6 +70,6 @@ https://blog.usejournal.com/android-material-design-components-backdrop-96a3044a
 ### TODO
 
 - [x] Handle Device Orientantion Changes (you can set it in your manifest's activity tag)
-- [ ] Call Toolbar via XML (by reference)
+- [x] Call Toolbar via XML (by reference)
 - [ ] Set a Front View Header (optional)
 - [ ] set Inative state to front layer when the back layer is visible (grey the layer)
