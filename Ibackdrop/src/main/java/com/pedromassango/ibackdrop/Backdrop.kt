@@ -117,8 +117,8 @@ class Backdrop(context: Context, attributeSet: AttributeSet) : FrameLayout(conte
         super.onFinishInflate()
 
         // if there is more than two views, crash the execution
-        if (childCount > 2) {
-            throw IllegalArgumentException(" ${this.javaClass.simpleName} must contain only two child!")
+        if (childCount <= 1 || childCount > 2) {
+            throw IllegalArgumentException(" ${this.javaClass.simpleName} must contain two child views!")
         }
 
         getFrontView().background = ResourcesCompat.getDrawable(resources, frontLayerBackground, null)
