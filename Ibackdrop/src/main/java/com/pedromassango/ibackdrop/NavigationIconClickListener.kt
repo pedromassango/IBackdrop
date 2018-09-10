@@ -14,6 +14,7 @@ class NavigationIconClickListener @JvmOverloads internal constructor(
         context: Context,
         private val backView: View,
         private val sheet: View,
+        private val backdropSize: Int,
         private val interpolator: Interpolator? = null,
         private val openIcon: Drawable? = null,
         private val closeIcon: Drawable? = null) : View.OnClickListener {
@@ -42,8 +43,13 @@ class NavigationIconClickListener @JvmOverloads internal constructor(
         backdropShown = !backdropShown
 
         // reduce backdrop folded height by reduce the toolbarNavIcon with & status bar height
-        val size = backView.width + view.height + 16
-        val translateY = height - size
+        val baseBackdropSize = backView.width + view.height + 16
+
+        // if no backdrop size provided, divide by the screen height
+        val translateY = when(backdropSize != 0){
+            true -> (height - backdropSize)
+            else -> baseBackdropSize
+        }
 
         // Cancel the existing animations
         animatorSet.removeAllListeners()
