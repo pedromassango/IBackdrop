@@ -11,7 +11,7 @@
         app:navigationIcon="@drawable/ic_drop_open"
         android:id="@+id/home_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="56dp"/>
 
     <!--The backdrop view-->
     <com.pedromassango.ibackdrop.Backdrop
@@ -20,11 +20,14 @@
         app:closeIcon="@drawable/ic_drop_close"
         app:removeTopRightRadius="false"
         app:toolbar="@id/home_toolbar"
+        app:backViewSize="@dimen/back_size"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <!--your back view-->
-        <include layout="@layout/main_backdrop"/>
+        <include layout="@layout/main_backdrop"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"/>
 
         <!--your foldable view (front view)-->
         <include layout="@layout/foldable_backdrop"/>
