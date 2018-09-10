@@ -43,12 +43,12 @@ class NavigationIconClickListener @JvmOverloads internal constructor(
         backdropShown = !backdropShown
 
         // reduce backdrop folded height by reduce the toolbarNavIcon with & status bar height
-        val baseBackdropSize = backView.width + view.height + 16
+        val size = backView.width + view.height + 16
 
         // if no backdrop size provided, divide by the screen height
         val translateY = when(backdropSize != 0){
             true -> (height - backdropSize)
-            else -> baseBackdropSize
+            else -> (height - size)
         }
 
         // Cancel the existing animations
