@@ -6,6 +6,7 @@
         <attr name="closeIcon" format="reference"/>
         <attr name="removeTopRightRadius" format="boolean"/>
         <attr name="toolbar" format="reference"/>
+        <attr name="backViewSize" format="dimension"/>
     </declare-styleable>
 
 </resources>

@@ -26,7 +26,7 @@ class Backdrop(context: Context, attributeSet: AttributeSet) : FrameLayout(conte
         try {
             val moIcon: Drawable? = customProperties.getDrawable(R.styleable.Backdrop_openIcon)
             val mcIcon: Drawable? = customProperties.getDrawable(R.styleable.Backdrop_closeIcon)
-            val mBackdropSize: Int? = customProperties.getInt(R.styleable.Backdrop_backViewSize, backdropSize)
+            val mBackdropSize: Int? = customProperties.getDimensionPixelSize(R.styleable.Backdrop_backViewSize, backdropSize)
             val mTopRightRadius: Boolean? = customProperties.getBoolean(R.styleable.Backdrop_removeTopRightRadius, false)
             mcToolbarId = customProperties.getResourceId(R.styleable.Backdrop_toolbar, -1)
             moIcon?.let { openIcon = moIcon }
