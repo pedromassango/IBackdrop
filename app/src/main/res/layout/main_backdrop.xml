@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_gravity="center_horizontal"
     android:background="@color/colorPrimary"
-    android:layout_height="wrap_content">
+    android:layout_height="100dp">
 
     <com.google.android.material.button.MaterialButton
         style="@style/Widget.MaterialComponents.Button.TextButton"
@@ -13,7 +13,7 @@
         android:gravity="center"
         android:id="@+id/btn_home"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="50dp" />
 
     <com.google.android.material.button.MaterialButton
         style="@style/Widget.MaterialComponents.Button.TextButton"
@@ -31,12 +31,4 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-
-    <com.google.android.material.button.MaterialButton
-        style="@style/Widget.MaterialComponents.Button.TextButton"
-        android:text="Settings"
-        android:textColor="#fff"
-        android:gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
 </LinearLayout>
