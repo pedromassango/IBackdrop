@@ -20,7 +20,6 @@
         app:closeIcon="@drawable/ic_drop_close"
         app:removeTopRightRadius="false"
         app:toolbar="@id/home_toolbar"
-        app:backViewSize="@dimen/back_size"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
