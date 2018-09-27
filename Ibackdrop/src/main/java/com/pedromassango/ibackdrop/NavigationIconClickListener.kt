@@ -57,7 +57,7 @@ class NavigationIconClickListener @JvmOverloads internal constructor(
         animatorSet.cancel()
 
         // menu icon update
-        updateIcon(view)
+        updateIcon()
 
         // [START] animation
         val animator = ObjectAnimator.ofFloat(sheet, "translationY", (if (backdropShown) translateY else 0).toFloat())
@@ -83,7 +83,7 @@ class NavigationIconClickListener @JvmOverloads internal constructor(
      * Update the Toolbar icon
      * @param view the clicked view. This must be a ImageView.
      */
-    private fun updateIcon(view: View) {
+    private fun updateIcon() {
         checkNotNull(toolbarNavIcon)
 
         if (openIcon != null && closeIcon != null) {
