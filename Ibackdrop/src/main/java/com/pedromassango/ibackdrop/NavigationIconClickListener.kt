@@ -20,7 +20,7 @@ class NavigationIconClickListener @JvmOverloads internal constructor(
         private val closeIcon: Drawable? = null) : View.OnClickListener {
 
     private val animatorSet = AnimatorSet()
-    private val animDuration = 270L
+    private val animDuration = 200L
     private var height: Int
     private var backdropShown = false
     private var toolbarNavIcon: AppCompatImageButton? = null
