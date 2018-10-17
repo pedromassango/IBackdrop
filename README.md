@@ -30,7 +30,7 @@ allprojects {
 }
 ```
 
-Step 2. Add the dependency
+Step 2. Adding Dependency
 ```groovy
 dependencies {
         ...
@@ -41,7 +41,7 @@ dependencies {
 
 Maven:
 
-Step 1. register jitpack.io
+Step 1. Register jitpack.io
 ```xml
 <repositories>
 	<repository>
@@ -71,5 +71,4 @@ https://blog.usejournal.com/android-material-design-components-backdrop-96a3044a
 
 - [x] Handle Device Orientation Changes (you can set it in your manifest's activity tag)
 - [x] Call Toolbar via XML (by reference)
-- [ ] Set a Front View Header (optional)
 - [ ] set Inactive state to front layer when the back layer is visible (grey the layer)
