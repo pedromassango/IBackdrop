@@ -45,7 +45,6 @@
               <option value="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-android-extensions/1.2.51/1755c607e5fabf4ba949ef626c73fc7421d35123/kotlin-android-extensions-1.2.51.jar" />
             </array>
           </option>
-          <option name="coroutinesState" value="warn" />
         </compilerArguments>
       </configuration>
     </facet>
