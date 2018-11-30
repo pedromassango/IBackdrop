@@ -7,6 +7,7 @@
         <attr name="removeTopRightRadius" format="boolean"/>
         <attr name="toolbar" format="reference"/>
         <attr name="backViewSize" format="dimension"/>
+        <attr name="animationDuration" format="integer"/>
     </declare-styleable>
 
 </resources>

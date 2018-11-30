@@ -17,6 +17,7 @@ class Backdrop(context: Context,
     private var closeIcon: Drawable? = ResourcesCompat.getDrawable(resources, R.drawable.ic_drop_close, null)
     private var frontLayerBackground: Int = R.drawable.backdrop_background
     private var backdropSize: Int = 0
+    private var animationDuration: Long = 200L
     private lateinit var navIconClickListener: NavigationIconClickListener
 
     private var mcToolbarId: Int
@@ -27,11 +28,13 @@ class Backdrop(context: Context,
         try {
             val moIcon: Drawable? = customProperties.getDrawable(R.styleable.Backdrop_openIcon)
             val mcIcon: Drawable? = customProperties.getDrawable(R.styleable.Backdrop_closeIcon)
+            val mAnimationDuration: Int? = customProperties.getInt(R.styleable.Backdrop_animationDuration, animationDuration.toInt())
             val mBackdropSize: Int? = customProperties.getDimensionPixelSize(R.styleable.Backdrop_backViewSize, backdropSize)
             val mTopRightRadius: Boolean? = customProperties.getBoolean(R.styleable.Backdrop_removeTopRightRadius, false)
             mcToolbarId = customProperties.getResourceId(R.styleable.Backdrop_toolbar, -1)
             moIcon?.let { openIcon = moIcon }
             mcIcon?.let { closeIcon = mcIcon }
+            mAnimationDuration?.let { animationDuration = mAnimationDuration.toLong() }
             mBackdropSize?.let { backdropSize = it }
             mTopRightRadius?.let {
                 frontLayerBackground = if (mTopRightRadius) R.drawable.backdrop_background_round_left else R.drawable.backdrop_background
@@ -53,6 +56,7 @@ class Backdrop(context: Context,
                 backView = getBackView(),
                 sheet = getFrontView(),
                 backdropSize = backdropSize,
+                animDuration = animationDuration,
                 interpolator = LinearInterpolator(),
                 openIcon = openIcon,
                 closeIcon = closeIcon
@@ -83,6 +87,7 @@ class Backdrop(context: Context,
                 backView = getBackView(),
                 sheet = getFrontView(),
                 backdropSize = backdropSize,
+                animDuration = animationDuration,
                 interpolator = LinearInterpolator(),
                 openIcon = openIcon,
                 closeIcon = closeIcon

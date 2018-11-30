@@ -16,10 +16,11 @@
     <!--The backdrop view-->
     <com.pedromassango.ibackdrop.Backdrop
         android:id="@+id/backdrop_view"
+        app:toolbar="@id/home_toolbar"
         app:openIcon="@drawable/ic_drop_open"
         app:closeIcon="@drawable/ic_drop_close"
+        app:animationDuration="100"
         app:removeTopRightRadius="false"
-        app:toolbar="@id/home_toolbar"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

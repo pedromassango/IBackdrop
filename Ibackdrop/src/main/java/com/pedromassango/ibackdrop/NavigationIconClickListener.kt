@@ -15,12 +15,12 @@ class NavigationIconClickListener @JvmOverloads internal constructor(
         private val backView: View,
         private val sheet: View,
         private val backdropSize: Int,
+        private val animDuration: Long = 200L,
         private val interpolator: Interpolator? = null,
         private val openIcon: Drawable? = null,
         private val closeIcon: Drawable? = null) : View.OnClickListener {
 
     private val animatorSet = AnimatorSet()
-    private val animDuration = 200L
     private var height: Int
     private var backdropShown = false
     private var toolbarNavIcon: AppCompatImageButton? = null
