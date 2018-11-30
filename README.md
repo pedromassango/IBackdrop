@@ -4,7 +4,7 @@
 A library to setup a backdrop component in your project since for now there is no a easy way to implement that in our project. Words from official material link: "A backdrop appears behind all other surfaces in an app, displaying contextual and actionable content", so there is an example of what you get using this library:
 
 
-<img src="/screenshots/gif1.gif" width="280" height="480">
+<img src="/screenshots/gif1.gif" width="270" height="480">
 
 
 ## Requirements
