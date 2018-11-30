@@ -9,7 +9,8 @@ import android.widget.FrameLayout
 import androidx.appcompat.widget.Toolbar
 import androidx.core.content.res.ResourcesCompat
 
-class Backdrop(context: Context, attributeSet: AttributeSet) : FrameLayout(context, attributeSet) {
+class Backdrop(context: Context,
+               attributeSet: AttributeSet) : FrameLayout(context, attributeSet) {
 
     private lateinit var toolbar: Toolbar
     private var openIcon: Drawable? = ResourcesCompat.getDrawable(resources, R.drawable.ic_drop_open, null)
