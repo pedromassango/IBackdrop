@@ -71,4 +71,6 @@ https://blog.usejournal.com/android-material-design-components-backdrop-96a3044a
 
 - [x] Handle Device Orientation Changes (you can set it in your manifest's activity tag)
 - [x] Call Toolbar via XML (by reference)
+- [x] Set a custom animation duration 
+- [x] Set a custom backdrop view size
 - [ ] set Inactive state to front layer when the back layer is visible (grey the layer)
