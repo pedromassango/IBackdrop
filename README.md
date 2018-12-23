@@ -74,3 +74,5 @@ https://blog.usejournal.com/android-material-design-components-backdrop-96a3044a
 - [x] Set a custom animation duration 
 - [x] Set a custom backdrop view size
 - [ ] set Inactive state to front layer when the back layer is visible (grey the layer)
+
+### :heart: Star :heart: the repo to support the project or :smile:[Follow Me](https://github.com/pedromassango).Thanks!
