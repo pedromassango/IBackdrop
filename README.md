@@ -76,3 +76,4 @@ https://blog.usejournal.com/android-material-design-components-backdrop-96a3044a
 - [ ] set Inactive state to front layer when the back layer is visible (grey the layer)
 
 ### :heart: Star :heart: the repo to support the project or :smile:[Follow Me](https://github.com/pedromassango).Thanks!
+[![Twitter Follow](https://img.shields.io/twitter/follow/pedromassangom.svg?style=social&label=Follow)](https://twitter.com/pedromassangom)
