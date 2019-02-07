@@ -16,7 +16,6 @@ class SampleActivity : AppCompatActivity() {
         setSupportActionBar(home_toolbar)
         title = " " // I do not want a title
 
-
         /**
          * Backdrop View Initialize
          * @see R.attrs.Backdrop}
