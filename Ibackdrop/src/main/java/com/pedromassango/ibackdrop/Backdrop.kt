@@ -12,7 +12,7 @@ import androidx.core.content.res.ResourcesCompat
 class Backdrop(context: Context,
                attributeSet: AttributeSet) : FrameLayout(context, attributeSet) {
 
-    private lateinit var toolbar: Toolbar
+    private var toolbar: Toolbar? = null
     private var openIcon: Drawable? = ResourcesCompat.getDrawable(resources, R.drawable.ic_drop_open, null)
     private var closeIcon: Drawable? = ResourcesCompat.getDrawable(resources, R.drawable.ic_drop_close, null)
     private var frontLayerBackground: Int = R.drawable.backdrop_background
@@ -42,6 +42,7 @@ class Backdrop(context: Context,
         } finally {
             customProperties.recycle()
         }
+
     }
 
     /**
@@ -51,6 +52,7 @@ class Backdrop(context: Context,
      */
     private fun build() {
         setToolbarWithReference()
+
         // click listener to open/close the sheet
         navIconClickListener = NavigationIconClickListener(context,
                 backView = getBackView(),
@@ -63,17 +65,24 @@ class Backdrop(context: Context,
         )
 
         // on toolbar navigation click, handle it
-        toolbar.setNavigationOnClickListener(navIconClickListener)
+        toolbar?.setNavigationOnClickListener(navIconClickListener)
     }
 
     private fun setToolbarWithReference() {
-        if (mcToolbarId == -1) throw IllegalStateException("Set toolbar property on XML or use Backdrop#buildWithToolbar(Toolbar)")
+        //if (mcToolbarId == -1) throw IllegalStateException("Set toolbar property on XML or use Backdrop#buildWithToolbar(Toolbar)")
         val view: View? = rootView.findViewById(mcToolbarId)
-        when (view) {
+        view?.let{
+            toolbar = view as Toolbar
+        }
+
+        // We are allowing the use of this library without a Toolbar
+        // so this code should be disabled (this code throw a exception if there is no a toolbar instance)
+
+        /*when (view) {
             null -> throw IllegalStateException("View does not accessible")
             !is Toolbar -> throw IllegalStateException("View is not Toolbar")
             else -> toolbar = view
-        }
+        }*/
     }
 
     /**
@@ -99,8 +108,9 @@ class Backdrop(context: Context,
 
     private fun setToolbar(toolbar: Toolbar) {
         this.toolbar = toolbar
+
         // update open icon
-        this.toolbar.navigationIcon = openIcon
+        this.toolbar?.navigationIcon = openIcon
     }
 
     /**
@@ -138,6 +148,8 @@ class Backdrop(context: Context,
     override fun onAttachedToWindow() {
         super.onAttachedToWindow()
         if (mcToolbarId != -1) {
+            build()
+        }else{
             build()
         }
     }

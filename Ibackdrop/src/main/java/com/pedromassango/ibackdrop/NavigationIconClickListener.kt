@@ -31,19 +31,20 @@ class NavigationIconClickListener @JvmOverloads internal constructor(
         height = (displayMetrics.heightPixels)
     }
 
-    fun open() = if(!backdropShown){ onClick(toolbarNavIcon!!) } else {}
-    fun close() = if(backdropShown){ onClick(toolbarNavIcon!!) } else {}
+    fun open() = if(!backdropShown){ onClick(toolbarNavIcon) } else {}
+    fun close() = if(backdropShown){ onClick(toolbarNavIcon) } else {}
 
-    override fun onClick(view: View) {
+    override fun onClick(view: View?) {
         // only bind once
-        if(toolbarNavIcon == null) {
+        /*if(toolbarNavIcon == null) {
             this.toolbarNavIcon = view as AppCompatImageButton
-        }
+        }*/
 
         backdropShown = !backdropShown
 
         // reduce backdrop folded height by reduce the toolbarNavIcon with & status bar height
-        val size = backView.width + view.height + 16
+        //val size = backView.width + (view?.height ?: 0)
+        val size = backView.width
 
         // if no backdrop size provided, divide by the screen height
         val translateY = when(backdropSize != 0){
@@ -84,13 +85,15 @@ class NavigationIconClickListener @JvmOverloads internal constructor(
      * @param view the clicked view. This must be a ImageView.
      */
     private fun updateIcon() {
-        checkNotNull(toolbarNavIcon)
+        try {
+            checkNotNull(toolbarNavIcon)
 
-        if (openIcon != null && closeIcon != null) {
-            when(backdropShown) {
-                true -> toolbarNavIcon!!.setImageDrawable(closeIcon)
-                false -> toolbarNavIcon!!.setImageDrawable(openIcon)
+            if (openIcon != null && closeIcon != null) {
+                when (backdropShown) {
+                    true -> toolbarNavIcon!!.setImageDrawable(closeIcon)
+                    false -> toolbarNavIcon!!.setImageDrawable(openIcon)
+                }
             }
-        }
+        }catch(e: Exception){ e.printStackTrace() }
     }
 }
